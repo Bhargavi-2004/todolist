@@ -1,0 +1,2 @@
+ref in schema:
+The ref option is what tells mongoose. js which model to use during population .
