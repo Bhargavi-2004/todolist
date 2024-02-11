@@ -1,0 +1,14 @@
+1. Use a password hashing algorithm.
+A password hashing algorithm is a one-way function that converts a password into a hash value. 
+The hash value is stored in the database, and when a user logs in, the entered password is hashed and compared to
+the stored hash value. If the two hash values match, the user is authenticated. 
+Password hashing algorithms such as bcrypt and Argon2 are designed to be slow and computationally expensive, 
+making it difficult for attackers to crack passwords.
+
+2. Use a secure salt.
+A salt is a random value that is added to the password before it is hashed. 
+This helps to prevent attackers from using pre-computed rainbow tables to crack passwords.
+
+using bcrypt:
+reference: 
+https://heynode.com/blog/2020-04/salt-and-hash-passwords-bcrypt/

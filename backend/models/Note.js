@@ -13,7 +13,6 @@ const noteSchema = new mongoose.Schema({
   description: {
     type: String,
     required: true,
-    unique: true,
   },
   tag: {
     type: String,
@@ -25,5 +24,5 @@ const noteSchema = new mongoose.Schema({
   },
 });
 
-const Note = mongoose.model("note", noteSchema);
+const Note = mongoose.model("notes", noteSchema);
 module.exports = Note;
