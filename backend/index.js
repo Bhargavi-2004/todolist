@@ -4,11 +4,15 @@ const express = require("express");
 const app = express();
 const port = 5000;
 
+// to access req body 
+app.use(express.json());
+
 app.get("/", (req, res) => {
   res.send("Backend Part!");
 });
 
 app.use("/api/auth", require("./routes/auth"));
+// app.use("/createuser", require("./routes/auth"));
 app.use("/api/notes", require("./routes/notes"));
 app.use("/", require("./routes/auth"));
 app.use("/", require("./routes/notes"));

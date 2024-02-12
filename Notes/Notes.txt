@@ -54,3 +54,6 @@ This is beneficial for development and testing, but doesn't replace remote web s
 In summary, localhost is a valuable tool for developers, offering a convenient way to simulate a web 
 server environment on their own machines. This helps them build and test websites offline before 
 publishing them online for the world to see.
+
+3. express.json()
+- This middleware is used for accessing the body of request.
