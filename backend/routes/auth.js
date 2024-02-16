@@ -3,11 +3,12 @@ const User = require("../models/User");
 const bcrypt = require("bcrypt");
 const { body, validationResult } = require("express-validator");
 var jwt = require("jsonwebtoken");
+const fetchUser = require("../middleware/fetchuser");
 
 const router = express.Router();
 
 // use it to sign web token and keep it safe
-const JWT_SECRET = "ImGoodGirl";
+const JWT_SECRET = "IamGoodGirl";
 
 // Create a new user : POST '/createuser' endpoint
 router.post(
@@ -118,9 +119,9 @@ router.post(
 );
 
 // fetch user data: POST "/fetch" endpoint
-router.post("/fetch", async (req, res) => {
+router.post("/fetch", fetchUser, async (req, res) => {
   try {
-    const userId = req.body.id;
+    const userId = req.user.id;
     const user = await User.findById(userId).select("-password");
     res.send(user);
   } catch (error) {

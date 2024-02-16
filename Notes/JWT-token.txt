@@ -1,0 +1,23 @@
+
+I understand that you've looked into JWT tokens before, but they can be tricky to grasp at first. 
+Let me break it down with an example you might find relatable:
+
+Imagine you're at a fancy restaurant. To get access to the exclusive VIP area, you need a special token. 
+This token isn't just any plastic card; it's a JWT token. Here's how it works:
+
+The Token:
+
+It's like a tiny, encrypted message containing your information: name, reservation details, dietary 
+restrictions (like claims in a JWT).
+Only the restaurant (issuer) and you (authorized recipient) can understand it.
+It's signed by a secret key the restaurant keeps hidden (like a digital signature). 
+This ensures no one can tamper with the message.
+
+Using the Token:
+
+You show the token to the bouncer (verifier).
+The bouncer checks the signature with the restaurant's secret key, confirming it's genuine.
+They decode the message to see your information (claims) and verify you're on the VIP list.
+If everything checks out, you get access to the VIP area!
+
+We need middlware to verify JWT-token.
