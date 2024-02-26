@@ -5,7 +5,10 @@ const About = () => {
   const a = useContext(NoteContext);
   return (
     <>
-      <h1>AboutPage {a.state.page}</h1>
+      <h1>
+        AboutPage {a.state.page} and name is {a.name}
+      </h1>
+      <p>Color of context is {a.color}</p>
     </>
   );
 };
