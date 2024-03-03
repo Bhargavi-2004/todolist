@@ -1,14 +1,10 @@
-import React, { useContext } from "react";
-import NoteContext from "../Context/notes/NoteContext";
+import React from "react";
 
 const About = () => {
-  const a = useContext(NoteContext);
   return (
     <>
-      <h1>
-        AboutPage {a.state.page} and name is {a.name}
-      </h1>
-      <p>Color of context is {a.color}</p>
+      <h1>AboutPage</h1>
+      <p>Color of context is blue</p>
     </>
   );
 };

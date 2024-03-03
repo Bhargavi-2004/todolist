@@ -1,0 +1,2 @@
+refer:
+https://imagekit.io/blog/how-to-resize-image-in-html/

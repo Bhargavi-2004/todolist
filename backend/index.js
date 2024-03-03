@@ -1,10 +1,14 @@
 const connectToMongo = require("./db");
 const express = require("express");
+var cors = require('cors')
 
 const app = express();
 const port = 5000;
 
-// to access req body 
+// for cross platforms:
+app.use(cors());
+
+// to access req body
 app.use(express.json());
 
 app.get("/", (req, res) => {

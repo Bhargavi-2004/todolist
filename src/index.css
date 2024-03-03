@@ -15,3 +15,30 @@ code {
 i {
   cursor: pointer;
 }
+
+.container-lg {
+  /* background-color: #9989e2; */
+  width: 100%;
+  height: 100vh;
+}
+
+.container {
+  height: max-content;
+  margin-top: 60px;
+}
+
+.form-con {
+  width: 200%;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  background-size: cover;
+  width: 500px;
+  height: 500px;
+  border-top-right-radius: 200px;
+  border-bottom-right-radius: 200px;
+  background-image: url("../src/img/loginbg.jpg");
+  background-repeat: no-repeat;
+}
