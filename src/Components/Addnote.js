@@ -3,7 +3,7 @@ import NoteContext from "../Context/notes/NoteContext";
 
 const Addnote = (props) => {
   const context = useContext(NoteContext);
-  const { addNote, getAllNote } = context;
+  const { addNote } = context;
 
   const [note, setNote] = useState({
     title: "",
@@ -11,23 +11,16 @@ const Addnote = (props) => {
     tag: "default",
   });
 
-  // const inputRef = useRef(null);
-
   const handleClick = (event) => {
     event.preventDefault();
     addNote(note.title, note.description, note.tag);
     setNote({ title: "", description: "", tag: "default" });
-    // console.log("handleClick", note);
     props.showAlert("Added Successfully!!!", "success");
   };
 
   const onchange = (e) => {
     setNote({ ...note, [e.target.name]: e.target.value });
   };
-
-  useEffect(() => {
-    getAllNote();
-  }, [note]);
 
   return (
     <>

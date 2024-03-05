@@ -1,17 +1,16 @@
-import React, { useState } from "react";
-import { Link, useLocation, Navigate } from "react-router-dom";
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Navigate } from "react-router";
 
-const Navbar = () => {
+const Navbar = (props) => {
   let location = useLocation();
-  const [redirectToHome, setRedirectToHome] = useState(false);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
-    setRedirectToHome(true);
+    props.showAlert("Logged out Successfully!!", "success");
+    <Navigate to="/login" />;
   };
-  if (redirectToHome) {
-    return <Navigate to="/login" />;
-  }
+
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-dark">
@@ -68,13 +67,14 @@ const Navbar = () => {
             >
               Login
             </Link>
-            <button
-              className="btn btn-outline-primary text-white"
-              type="submit"
+            <Link
+              className="btn btn-outline-primary text-white my-2 mx-2"
+              to="/logout"
+              role="submit"
               onClick={handleLogout}
             >
               Logout
-            </button>
+            </Link>
           </div>
           <form className="d-flex" role="search">
             <input

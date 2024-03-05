@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
-
 import "../index.css";
+
 const Login = (props) => {
   const host = "http://localhost:5000";
   const [credential, setCredential] = useState({ email: "", password: "" });
@@ -27,6 +27,7 @@ const Login = (props) => {
     } else {
       props.showAlert("Invalid details", "danger");
     }
+    setCredential({ email: "", password: "" });
   };
 
   const onchange = (e) => {
@@ -35,6 +36,7 @@ const Login = (props) => {
   if (redirectToHome) {
     return <Navigate to="/" />;
   }
+
   return (
     <>
       <div className="row">
