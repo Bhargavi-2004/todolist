@@ -65,7 +65,7 @@ router.post(
       res.json({ success, authtoken });
     } catch (error) {
       console.log(error.message);
-      res.status(500).send("some error Ocuured");
+      return res.status(500).send("some error Ocuured");
     }
   }
 );
@@ -87,7 +87,7 @@ router.post(
     const { email, password } = req.body;
     try {
       let user = await User.findOne({ email });
-      console.log(user);
+      // console.log(user);
       if (!user) {
         success = false;
         return res.status(400).json({

@@ -1,15 +1,25 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import NoteContext from "../Context/notes/NoteContext";
+import { Navigate } from "react-router-dom";
 
 const Addnote = (props) => {
   const context = useContext(NoteContext);
-  const { addNote } = context;
+  const { addNote, getAllNote } = context;
 
   const [note, setNote] = useState({
     title: "",
     description: "",
     tag: "default",
   });
+
+  useEffect(() => {
+    if (localStorage.getItem("token") !== null) getAllNote();
+    // eslint-disable-next-line
+  }, []);
+
+  if (!localStorage.getItem("token")) {
+    return <Navigate to="/login" />;
+  }
 
   const handleClick = (event) => {
     event.preventDefault();
@@ -69,6 +79,7 @@ const Addnote = (props) => {
             type="submit"
             className="btn btn-primary"
             onClick={handleClick}
+            disabled={note.title.length < 5 || note.description.length < 5}
           >
             Add Note
           </button>

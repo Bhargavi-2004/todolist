@@ -9,7 +9,7 @@ const Signup = (props) => {
     password: "",
     cpassword: "",
   });
-  // const [redirectToHome, setRedirectToHome] = useState(false);
+  const [redirectToHome, setRedirectToHome] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -35,6 +35,7 @@ const Signup = (props) => {
       const json = await response.json();
       if (json.success) {
         localStorage.setItem("token", json.authtoken);
+        setRedirectToHome(true);
         props.showAlert("Account loggedin Successfully...!", "success");
       } else {
         props.showAlert("Invalid details", "danger");
@@ -47,6 +48,9 @@ const Signup = (props) => {
   const onchange = (e) => {
     setCredential({ ...credential, [e.target.name]: e.target.value });
   };
+  if (redirectToHome) {
+    return <Navigate to="/" />;
+  }
 
   return (
     <>

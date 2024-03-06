@@ -16,7 +16,7 @@ const Navbar = (props) => {
       <nav className="navbar navbar-expand-lg bg-dark">
         <div className="container-fluid">
           <Link className="navbar-brand text-white" to="#">
-            Navbar
+            INotebook
           </Link>
           <button
             className="navbar-toggler"
@@ -50,6 +50,16 @@ const Navbar = (props) => {
                   to="/about"
                 >
                   About
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className={`nav-link ${
+                    location.pathname === "/project" ? "active" : ""
+                  }text-white`}
+                  to="/project"
+                >
+                  My Projects
                 </Link>
               </li>
             </ul>

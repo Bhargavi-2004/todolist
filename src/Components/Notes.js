@@ -1,17 +1,12 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import NoteContext from "../Context/notes/NoteContext";
 import Noteitem from "./Noteitem";
 import Addnote from "./Addnote";
 
 const Notes = (props) => {
   const context = useContext(NoteContext);
-  const { notes, getAllNote, updateNote } = context;
+  const { notes, updateNote } = context;
   const { showAlert } = props;
-
-  useEffect(() => {
-    if (localStorage.getItem("token") !== null) getAllNote();
-    else console.log("error");
-  }, []);
 
   const ref = useRef(null);
   const refClose = useRef(null);
@@ -118,6 +113,9 @@ const Notes = (props) => {
                   type="button"
                   className="btn btn-primary"
                   onClick={handleClick}
+                  disabled={
+                    note.etitle.length < 5 || note.edescription.length < 5
+                  }
                 >
                   Edit note
                 </button>

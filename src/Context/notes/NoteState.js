@@ -39,6 +39,7 @@ const NoteState = (props) => {
   // Update Note:
   const updateNote = async (id, title, description, tag) => {
     // API Call:
+    // eslint-disable-next-line
     const response = await fetch(`${host}/updateNote/${id}`, {
       method: "PUT",
       headers: {
@@ -65,6 +66,7 @@ const NoteState = (props) => {
   // Delete Note:
   const deleteNote = async (id) => {
     // API call:
+    // eslint-disable-next-line
     const response = await fetch(`${host}/deletenote/${id}`, {
       method: "DELETE",
       headers: {
@@ -72,7 +74,7 @@ const NoteState = (props) => {
         "auth-token": localStorage.getItem("token"),
       },
     });
-    const json = await response.json();
+
     const newNotes = notes.filter((note) => {
       return note._id !== id;
     });
@@ -80,7 +82,14 @@ const NoteState = (props) => {
   };
   return (
     <NoteContext.Provider
-      value={{ notes, setNotes, getAllNote, addNote, updateNote, deleteNote }}
+      value={{
+        notes,
+        setNotes,
+        getAllNote,
+        addNote,
+        updateNote,
+        deleteNote,
+      }}
     >
       {props.children}
     </NoteContext.Provider>

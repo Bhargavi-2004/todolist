@@ -4,20 +4,19 @@ const router = express.Router();
 const fetchUser = require("../middleware/fetchuser");
 const { body, validationResult } = require("express-validator");
 
-router.get("/api/notes", async (req, res) => {
-  const newNote = new Note({
-    title: "exam",
-    description: "Tommorrow is your exam day.",
-    tag: "Finals",
-    date: Date.now(),
-  });
-  newNote
-    .save()
-    .then(() => console.log("Notes created successfully"))
-    .catch((err) => console.error("Error creating user:", err));
-  res.json(newNote);
-  console.log("Notes api called");
-});
+// router.get("/api/notes", async (req, res) => {
+//   const newNote = new Note({
+//     title: "exam",
+//     description: "Tommorrow is your exam day.",
+//     tag: "Finals",
+//     date: Date.now(),
+//   });
+//   newNote
+//     .save()
+//     .then(() => console.log("Notes created successfully"))
+//     .catch((err) => console.error("Error creating user:", err));
+//   res.json(newNote);
+// });
 
 // Fetch all notes: '/fetchallnotes'
 router.get("/fetchallnotes", fetchUser, async (req, res) => {
