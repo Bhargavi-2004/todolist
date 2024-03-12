@@ -10,7 +10,6 @@ const Navbar = (props) => {
     props.showAlert("Logged out Successfully!!", "success");
     <Navigate to="/login" />;
   };
-
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-dark">
@@ -64,21 +63,21 @@ const Navbar = (props) => {
               </li>
             </ul>
             <Link
-              className="btn btn-outline-primary text-white my-2 mx-2"
+              className="btn btn-outline-primary text-white my-2 mx-2 signup"
               to="/signup"
               role="submit"
             >
               SignUp
             </Link>
             <Link
-              className="btn btn-outline-primary text-white my-2 mx-2"
+              className="btn btn-outline-primary text-white my-2 mx-2 login"
               to="/login"
               role="submit"
             >
               Login
             </Link>
             <Link
-              className="btn btn-outline-primary text-white my-2 mx-2"
+              className="btn btn-outline-primary text-white my-2 mx-2 logout"
               to="/logout"
               role="submit"
               onClick={handleLogout}

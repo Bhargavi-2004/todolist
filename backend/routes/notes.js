@@ -50,7 +50,7 @@ router.post(
 
     // if error Ocuured:
     if (!errors.isEmpty()) {
-      res.status(400).send({ errors: errors.array() });
+      return res.status(400).send({ errors: errors.array() });
     }
     try {
       const { title, description, tag } = req.body;
@@ -73,7 +73,7 @@ router.post(
     } catch (error) {
       //error:
       console.log(error);
-      res.status(500).send({ error: "Some Error Ocuured." });
+      return res.status(500).send({ error: "Some Error Ocuured." });
     }
   }
 );

@@ -17,9 +17,11 @@ app.get("/", (req, res) => {
 
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/notes", require("./routes/notes"));
+app.use("/api/projects", require("./routes/projects"));
 
 app.use("/", require("./routes/auth"));
 app.use("/", require("./routes/notes"));
+app.use("/", require("./routes/projects"));
 
 app.listen(port, () => {
   console.log(`Listening on port numbe: ${port}`);

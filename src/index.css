@@ -42,3 +42,46 @@ i {
   background-image: url("../src/img/loginbg.jpg");
   background-repeat: no-repeat;
 }
+
+/* project */
+.projecth1 {
+  margin-top: -33px;
+  text-align: center;
+}
+
+.pname:hover {
+  color: #a50374;
+  text-decoration: wavy;
+}
+
+.pimage {
+  display: flex;
+  justify-content: center;
+  background-size: cover;
+  width: 500px;
+  height: 500px;
+  border-top-right-radius: 127px;
+  border-bottom-right-radius: 127px;
+  background-image: url("../src/img/pbg.jpg");
+  background-repeat: no-repeat;
+}
+
+.pfolder {
+  color: #004085;
+  font-size: 2rem;
+}
+
+/* operations */
+.operations {
+  display: none;
+  position: absolute;
+  margin: auto;
+  top: 20%;
+  left: 36%;
+}
+
+.close {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+}
