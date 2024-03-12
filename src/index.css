@@ -85,3 +85,20 @@ i {
   top: 0%;
   right: 0%;
 }
+
+/* about */
+.aboutimage {
+  display: flex;
+  justify-content: center;
+  background-size: cover;
+  width: 963px;
+  height: 612px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  background-image: url("../src/img/aboutbg.png");
+  background-repeat: no-repeat;
+}
+
+.abouth1 {
+  text-align: center;
+}

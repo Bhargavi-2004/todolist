@@ -57,23 +57,15 @@ router.post(
 );
 
 router.delete("/deleteproject/:id", fetchUser, async (req, res) => {
-  // validate user:
-  const errors = validationResult(req);
-
-  // if error occures:
-  if (!errors.isEmpty()) {
-    return res.status(400).send({ errors: errors.array() });
-  }
-
   try {
     //find the project to be deleted and delete it:
-    let project = new Project.findById(req.params.id);
+    let project = await Project.findById(req.params.id);
     if (!project) {
       return res.status(404).send("Not Found!");
     }
 
     // Allow deletion only if user owns this project:
-    if (project.user.toString() !== req.params.id) {
+    if (project.user.toString() !== req.user.id) {
       return res.status(401).send("Not Allowed");
     }
 
@@ -85,5 +77,57 @@ router.delete("/deleteproject/:id", fetchUser, async (req, res) => {
     return res.status(500).send({ error: "Some Internal error occures!" });
   }
 });
+
+router.put(
+  "/updateproject/:id",
+  fetchUser,
+  [
+    body("projectTitle")
+      .isLength({ min: 3 })
+      .withMessage("The tite must be 3 characters long."),
+  ],
+  async (req, res) => {
+    try {
+      // validate user:
+      const errors = validationResult(req);
+
+      // if error occures:
+      if (!errors.isEmpty()) {
+        return res.status(400).send({ errors: errors.array() });
+      }
+
+      const { projectTitle, projectLink } = req.body;
+
+      const newProject = {};
+      if (projectTitle) {
+        newProject.projectTitle = projectTitle;
+      }
+      if (projectLink) {
+        newProject.projectLink = projectLink;
+      }
+
+      let project = await Project.findById(req.params.id);
+      if (!project) {
+        return res.status(404).send("Not Found");
+      }
+
+      // validate user:
+      if (project.user.toString() !== req.user.id) {
+        return res.status(401).send("Not Allowed");
+      }
+
+      project = await Project.findByIdAndUpdate(
+        req.params.id,
+        { $set: newProject },
+        { new: true }
+      );
+
+      res.json({ newProject });
+    } catch (error) {
+      console.error(error.message);
+      res.status(500).send("Internal Server Error");
+    }
+  }
+);
 
 module.exports = router;

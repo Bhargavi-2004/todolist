@@ -10,6 +10,7 @@ import Login from "./Components/Login";
 import { useState } from "react";
 import Logout from "./Components/Logout";
 import Project from "./Components/Project";
+import ProjectState from "./Context/notes/ProjectState";
 
 function App() {
   const [alert, setAlert] = useState(null);
@@ -27,40 +28,42 @@ function App() {
   return (
     <>
       <NoteState>
-        <Router>
-          <Navbar showAlert={showAlert} />
-          <Alert alert={alert} />
-          {/* <div className="container-lg"> */}
-          <Routes>
-            <Route exact path="/" element={<Home showAlert={showAlert} />} />
-            <Route
-              exact
-              path="/about"
-              element={<About showAlert={showAlert} />}
-            />
-            <Route
-              exact
-              path="/signup"
-              element={<Signup showAlert={showAlert} />}
-            />
-            <Route
-              exact
-              path="/login"
-              element={<Login showAlert={showAlert} />}
-            />
-            <Route
-              exact
-              path="/project"
-              element={<Project showAlert={showAlert} />}
-            />
-            <Route
-              exact
-              path="/logout"
-              element={<Logout showAlert={showAlert} />}
-            />
-          </Routes>
-          {/* </div> */}
-        </Router>
+        <ProjectState>
+          <Router>
+            <Navbar showAlert={showAlert} />
+            <Alert alert={alert} />
+            {/* <div className="container-lg"> */}
+            <Routes>
+              <Route exact path="/" element={<Home showAlert={showAlert} />} />
+              <Route
+                exact
+                path="/about"
+                element={<About showAlert={showAlert} />}
+              />
+              <Route
+                exact
+                path="/signup"
+                element={<Signup showAlert={showAlert} />}
+              />
+              <Route
+                exact
+                path="/login"
+                element={<Login showAlert={showAlert} />}
+              />
+              <Route
+                exact
+                path="/project"
+                element={<Project showAlert={showAlert} />}
+              />
+              <Route
+                exact
+                path="/logout"
+                element={<Logout showAlert={showAlert} />}
+              />
+            </Routes>
+            {/* </div> */}
+          </Router>
+        </ProjectState>
       </NoteState>
     </>
   );

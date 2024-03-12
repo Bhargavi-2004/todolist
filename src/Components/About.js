@@ -3,8 +3,10 @@ import React from "react";
 const About = () => {
   return (
     <>
-      <h1>AboutPage</h1>
-      <p>Color of context is blue</p>
+      <div className="conatiner">
+        <h1 className="abouth1">About Us</h1>
+        <div className="aboutimage"></div>
+      </div>
     </>
   );
 };
