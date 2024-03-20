@@ -9,7 +9,7 @@ const Projectitem = (props) => {
   return (
     <>
       <div className="col-md-3">
-        <div className="card my-3">
+        <div className="card my-3 mx-3">
           <div className="card-body">
             <div className="d-flex align-items-center">
               <h5 className="card-title">{project.projectTitle}</h5>

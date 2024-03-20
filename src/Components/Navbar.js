@@ -6,13 +6,22 @@ const Navbar = (props) => {
   let location = useLocation();
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
-    props.showAlert("Logged out Successfully!!", "success");
-    <Navigate to="/login" />;
+    console.log(localStorage.getItem("token"));
+    if (localStorage.getItem("token") == null) {
+      props.showAlert(
+        "You are not loggedin! Please Login the after you can logout!",
+        "danger"
+      );
+    } else {
+      localStorage.removeItem("token");
+      props.showAlert("Logged out Successfully!!", "success");
+      <Navigate to="/login" />;
+    }
   };
+
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-dark">
+      <nav className="navbar navbar-expand-lg bg-dark g-0 navBar">
         <div className="container-fluid">
           <Link className="navbar-brand text-white" to="#">
             INotebook
@@ -76,6 +85,7 @@ const Navbar = (props) => {
             >
               Login
             </Link>
+
             <Link
               className="btn btn-outline-primary text-white my-2 mx-2 logout"
               to="/logout"

@@ -62,13 +62,13 @@ const Project = (props) => {
         </Link>
       </h1>
       <div className="row">
-        <div className="col-4">
+        <div className="col-xl-5 col-xm-4">
           <div className="pimage"></div>
         </div>
-        <div className="col">
-          <div className="row">
+        <div className="col-xl-7 col-xm-8">
+          <div className="row-xl">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
+              <li className="nav-item pnew">
                 <Link>
                   <i
                     className="bi bi-folder-fill pfolder"
@@ -76,12 +76,14 @@ const Project = (props) => {
                   ></i>
                 </Link>
               </li>
-              <li className="nav-item">
+              <li className="nav-item pnew">
                 <Link onClick={() => handleLinkClick("new")}>New</Link>
               </li>
             </ul>
           </div>
-          {activeLink === "new" && <AddProject showAlert={showAlert} setActiveLink={setActiveLink}/>}
+          {activeLink === "new" && (
+            <AddProject showAlert={showAlert} setActiveLink={setActiveLink} />
+          )}
           <button
             type="button"
             className="btn btn-primary d-none"
@@ -140,7 +142,7 @@ const Project = (props) => {
                       className="btn btn-primary"
                       onClick={handleClick}
                       disabled={
-                        project.etitle.length < 5 || project.elink.length < 5
+                        project.etitle.length < 3 || project.elink.length < 5
                       }
                     >
                       Edit
@@ -160,19 +162,19 @@ const Project = (props) => {
               </div>
             </div>
           </div>
-            {projects.length === 0 && "No projects to display"}
-            <div className="row my-3">
-              {projects.map((project) => {
-                return (
-                  <Projectitem
-                    key={project._id}
-                    project={project}
-                    showAlert={showAlert}
-                    editProject={editProject}
-                  />
-                );
-              })}
-            </div>
+          {projects.length === 0 && "No projects to display"}
+          <div className="row my-3">
+            {projects.map((project) => {
+              return (
+                <Projectitem
+                  key={project._id}
+                  project={project}
+                  showAlert={showAlert}
+                  editProject={editProject}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
     </>

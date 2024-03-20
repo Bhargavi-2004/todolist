@@ -6,10 +6,10 @@ const Home = (props) => {
   return (
     <>
       <div className="row">
-        <div className="col-xl-2 col-xxl-2">
+        <div className="col-lg-5 col-xl-4">
           <div className="login-container"></div>
         </div>
-        <div className="col-xl-10 col-xxl-10">
+        <div className="col-lg-7 col-xl-8">
           <Notes showAlert={showAlert} />
         </div>
       </div>

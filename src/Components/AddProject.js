@@ -34,9 +34,9 @@ const AddProject = (props) => {
 
   return (
     <>
-      <h1>Add a project</h1>
+      <h1 className="mx-3">Add a project</h1>
       <form>
-        <div className="mb-3">
+        <div className="mb-3 mx-3">
           <label htmlFor="title" className="form-label">
             Title
           </label>
@@ -50,7 +50,7 @@ const AddProject = (props) => {
             onChange={onchange}
           />
         </div>
-        <div className="mb-3">
+        <div className="mb-3 mx-3">
           <label htmlFor="link" className="form-label">
             Link
           </label>
@@ -64,7 +64,7 @@ const AddProject = (props) => {
         </div>
         <button
           type="submit"
-          className="btn btn-primary"
+          className="btn btn-primary mx-3"
           onClick={handleClick}
           disabled={project.title.length < 5 || project.link.length < 5}
         >
