@@ -64,7 +64,7 @@ const Notes = (props) => {
           <div className="modal-content">
             <div className="modal-header">
               <h1 className="modal-title fs-5" id="exampleModalLabel">
-                Title
+                Edit Note
               </h1>
             </div>
             <div className="modal-body">
@@ -137,7 +137,7 @@ const Notes = (props) => {
       <div className="container">
         <h2>Your Notes</h2>
         {notes.length === 0 && "No notes to display"}
-        <div className="row my-3">
+        <div className="row no-gutters my-3">
           {notes.map((note) => {
             return (
               <Noteitem

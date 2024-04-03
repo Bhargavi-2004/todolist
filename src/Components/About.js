@@ -6,11 +6,11 @@ const About = () => {
     <>
       <div className="conatiner">
         <h1 className="abouth1">About Us</h1>
-        <div className="row">
-          <div className="col">
+        <div className="row no-gutters">
+          <div className="col-xl-5 col-md-12">
             <div className="aboutimage"></div>
           </div>
-          <div className="col">
+          <div className="col-xl-7 col-md-12">
             <div className="aboutPage">
               <ul>
                 <li>
@@ -31,13 +31,19 @@ const About = () => {
                 </li>
               </ul>
               <h6>Make your profile by signing in our site.</h6>
-              <Link to="/signup" className="aboutLink">Create an account</Link>
+              <Link to="/signup" className="aboutLink">
+                Create an account
+              </Link>
               <h6>
-                Already have an account? <Link to="/login" className="aboutLink">login</Link>
+                Already have an account?{" "}
+                <Link to="/login" className="aboutLink">
+                  login
+                </Link>
               </h6>
             </div>
           </div>
         </div>
+        {/* <footer className="footer">copyright 2024</footer> */}
       </div>
     </>
   );

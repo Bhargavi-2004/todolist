@@ -5,7 +5,7 @@ const Home = (props) => {
  
   return (
     <>
-      <div className="row">
+      <div className="row no-gutters">
         <div className="col-lg-5 col-xl-4">
           <div className="login-container"></div>
         </div>

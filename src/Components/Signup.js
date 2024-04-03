@@ -54,11 +54,11 @@ const Signup = (props) => {
 
   return (
     <>
-      <div className="row">
-        <div className="col-4">
+      <div className="row no-gutters">
+        <div className="col-xl-4">
           <div className="login-container"></div>
         </div>
-        <div className="co-8">
+        <div className="col-xl-8">
           <div className="container">
             <h1>Signup</h1>
             <form className="form-con" onSubmit={handleSubmit}>
@@ -118,7 +118,7 @@ const Signup = (props) => {
                   onChange={onchange}
                 />
               </div>
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" className="btn btn-primary mb-3">
                 Submit
               </button>
             </form>

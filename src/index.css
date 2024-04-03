@@ -18,7 +18,8 @@ i {
 
 @media screen and (max-width: 478px) {
   .container {
-    margin: 0px !important;
+    margin: 0px 0px 0px 0px!important;
+    padding-right: 0px !important;
     font-size: 1rem;
   }
 
@@ -35,14 +36,23 @@ i {
   h2 {
     margin: 15px;
   }
+
+  .aboutimage {
+    width: auto !important;
+    height: 273px !important;
+  }
+
+  .aboutPage {
+    font-size: 1rem !important;
+  }
 }
 
 @media screen and (max-width: 820px) {
   .login-container {
-    width: 370px;
-    height: 360px;
-    border-top-right-radius: 90px;
-    border-bottom-right-radius: 90px;
+    width: 370px !important;
+    height: 360px !important;
+    border-top-right-radius: 90px !important;
+    border-bottom-right-radius: 90px !important;
   }
 }
 
@@ -58,14 +68,14 @@ i {
 }
 
 .form-con {
-  width: 200%;
+  width: 100%;
 }
 
 .login-container {
   display: flex;
   justify-content: center;
   background-size: cover;
-  width: 500px;
+  width: 434px;
   height: 500px;
   border-top-right-radius: 200px;
   border-bottom-right-radius: 200px;
@@ -80,8 +90,13 @@ i {
     flex-direction: row !important;
   }
 
-  .card-body{
+  .card-body {
     padding-left: 15px !important;
+  }
+
+  .aboutimage {
+    width: auto !important;
+    height: 500px;
   }
 }
 
@@ -137,8 +152,8 @@ i {
   display: flex;
   justify-content: center;
   background-size: cover;
-  width: 963px;
-  height: 612px;
+  width: 787px;
+  height: 509px;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
   background-image: url("../src/img/aboutbg.png");
@@ -150,6 +165,7 @@ i {
 }
 
 .aboutPage {
+  padding-left: 12px;
   font-size: 1.3rem;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -172,4 +188,51 @@ i {
 
 .aboutLink:hover {
   color: green;
+}
+
+@media (min-width: 1206px) and (max-width: 1920px) {
+  .aboutimage {
+    width: 496px;
+    height: 327px;
+  }
+}
+
+@media (min-width: 768px) {
+  .aboutimage {
+    width: 765px;
+    height: 558px;
+  }
+}
+
+@media (min-width: 820px) and (max-width: 1206px) {
+  .aboutimage {
+    width: auto;
+    height: 638px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .aboutimage {
+    width: 524px;
+    height: 348px;
+  }
+
+  .login-container{
+    width: 444px;
+  }
+}
+
+/* footer */
+.footer {
+  height: 40px;
+  background-color: rgb(28, 26, 26);
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+  padding-top: 5px;
+  font-family: "Times New Roman", Times, serif;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
 }

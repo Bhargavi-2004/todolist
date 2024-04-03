@@ -61,12 +61,12 @@ const Project = (props) => {
           My Projects
         </Link>
       </h1>
-      <div className="row">
+      <div className="row no-gutters">
         <div className="col-xl-5 col-xm-4">
           <div className="pimage"></div>
         </div>
         <div className="col-xl-7 col-xm-8">
-          <div className="row-xl">
+          <div className="row no-gutters-xl">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item pnew">
                 <Link>
@@ -105,7 +105,7 @@ const Project = (props) => {
               <div className="modal-content">
                 <div className="modal-header">
                   <h1 className="modal-title fs-5" id="exampleModalLabel">
-                    Title
+                    Edit Ptoject
                   </h1>
                 </div>
                 <div className="modal-body">
@@ -163,7 +163,7 @@ const Project = (props) => {
             </div>
           </div>
           {projects.length === 0 && "No projects to display"}
-          <div className="row my-3">
+          <div className="row no-gutters my-3">
             {projects.map((project) => {
               return (
                 <Projectitem

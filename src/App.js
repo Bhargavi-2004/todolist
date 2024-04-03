@@ -32,7 +32,6 @@ function App() {
           <Router>
             <Navbar showAlert={showAlert} />
             <Alert alert={alert} />
-            {/* <div className="container-lg"> */}
             <Routes>
               <Route exact path="/" element={<Home showAlert={showAlert} />} />
               <Route
@@ -61,7 +60,6 @@ function App() {
                 element={<Logout showAlert={showAlert} />}
               />
             </Routes>
-            {/* </div> */}
           </Router>
         </ProjectState>
       </NoteState>

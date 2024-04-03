@@ -39,7 +39,7 @@ const Login = (props) => {
 
   return (
     <>
-      <div className="row">
+      <div className="row no-gutters">
         <div className="col-4">
           <div className="login-container"></div>
         </div>
@@ -77,7 +77,7 @@ const Login = (props) => {
                   onChange={onchange}
                 />
               </div>
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" className="btn btn-primary mb-3">
                 Submit
               </button>
             </form>
