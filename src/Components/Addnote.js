@@ -34,7 +34,7 @@ const Addnote = (props) => {
 
   return (
     <>
-      <div className="container mx-2">
+      <div className="container mx-3">
         <h1>Add a note</h1>
         <form>
           <div className="mb-3">

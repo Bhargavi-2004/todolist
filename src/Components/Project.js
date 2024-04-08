@@ -66,7 +66,7 @@ const Project = (props) => {
           <div className="pimage"></div>
         </div>
         <div className="col-xl-7 col-xm-8">
-          <div className="row no-gutters-xl">
+          <div className="row no-gutters">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item pnew">
                 <Link>
